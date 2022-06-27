@@ -53,7 +53,7 @@ Lists of language-specific resources. Most are maintained (or not maintained) in
 - 🇫🇮 [awesome-suomi](https://github.com/sikmir/awesome-finnish)
 - 🇺🇦 awesome-украї́нська
 - 🇷🇺 [awesome-русский](https://github.com/MitPitt/awesome-russian)
-
+- 🇷🇴 awesome-românește
 
 ## Middle East & Africa
 - 🇵🇸 [awesome-العربية](https://github.com/arabic-mubeen/awesome-arabic-learning)
