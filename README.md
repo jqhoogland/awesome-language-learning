@@ -37,8 +37,6 @@ Awesome *free* resources for learning languages. (WIP)
 
 Lists of language-specific resources. Most are maintained (or not maintained) in other resources.
 
-TODO: collect language-specific lists under this repo.
-
 ## Europe
 - 🇬🇧 🇺🇸 [awesome-english](https://github.com/yvoronoy/awesome-english)
 - 🇪🇸 🇲🇽 🇨🇴 [awesome-español](https://github.com/Areso/Awesome-for-Spanish-learners)
@@ -78,7 +76,6 @@ TODO: collect language-specific lists under this repo.
 
 ## Conlangs / Dead languages
 - 🦅 [awesome-latinum](https://github.com/carolinaknoll/awesome-latin)
-- ![](https://en.wikipedia.org/wiki/File%3AFlag_of_Esperanto.svg) [awesome-esperanto](/languages/awesome-esperanto)
 - ☀️ [awesome-toki-pona](https://tokipona.org/)
 
 
