@@ -1,6 +1,7 @@
 # Awesome العربية (Arabic)
 
-See also: [`awesome-arabic-learning`](https://github.com/arabic-mubeen/awesome-arabic-learning)
+See [`awesome-arabic-learning`](https://github.com/arabic-mubeen/awesome-arabic-learning) & 
+[All Language Resources](https://www.alllanguageresources.com/resources/arabic).
 
 For general language-learning resources, see [parent](/).
 
@@ -9,7 +10,6 @@ For general language-learning resources, see [parent](/).
 - ⌛️ = "no updates in past year"
 
 ## 📀 Resources
-- [All Language Resources](https://www.alllanguageresources.com/arabic)
 - [r/learn_arabic](https://www.reddit.com/r/learn_arabic)
 - [cstrobbe](https://cstrobbe.gitlab.io/languagelearning/other-languages/index.html)
 - [LearnALanguage.com](https://www.learnalanguage.com/learn-arabic/)
