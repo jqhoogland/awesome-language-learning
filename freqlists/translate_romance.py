@@ -51,7 +51,7 @@ def main(src: Path, lang: str):
     translations = [t.text for t in translator.translate(translation_queries, src="en", dest=lang)]
     body = [[translation, *row] for translation, row in zip(translations, data)]
 
-    with open(str(src).replace("en", "fr"), "w") as f:
+    with open(str(src).replace("en", lang), "w") as f:
         writer = csv.writer(f)
         writer.writerows(
             [
