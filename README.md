@@ -56,7 +56,7 @@ Lists of language-specific resources. Most are maintained (or not maintained) in
 
 
 ## Middle East & Africa
-- 🇵🇸 [awesome-العربية](https://github.com/arabic-mubeen/awesome-arabic-learning)
+- 🇵🇸 [awesome-العربية](/languages/ar)
 - 🇮🇷 awesome-فارسی
 - 🇹🇷 awesome-türkçe
 - 🇮🇱 awesome-עִבְרִית
