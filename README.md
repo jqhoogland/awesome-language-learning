@@ -1,4 +1,4 @@
-# Language Learning [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re)
+# Awesome Language Learning [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re)
 Awesome *free* resources for learning languages.
 
 # General
