@@ -1,9 +1,11 @@
 # Language Learning [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re)
-Awesome *free* resources for learning languages. (WIP)
+Awesome *free* resources for learning languages.
 
 # General
-💰 = "freemium model" (where the free tier isn't totally worthless).
-⌛️ = "no updates in past year"
+
+**Key:**
+- 💰 = "freemium model" (where the free tier isn't totally worthless).
+- ⌛️ = "no updates in past year"
 ## 🗺 Guides
 - [S A J Forbes' Guide](https://sajforbes.nz/languageguide/introduction/)
 
@@ -17,12 +19,12 @@ Awesome *free* resources for learning languages. (WIP)
 - ⌛️ [So you want to learn a language](https://sites.google.com/site/soyouwanttolearnalanguage/home): Lots of asian languages, but not maintained since 2014.
 - [Rhinospike](https://rhinospike.com/): Forvo's cousin for longer audio fragments.
 - [Goethe-verlag](https://www.goethe-verlag.com/book2/EN/): Non-crowdsourced phrases
-- [Language Guide](https://www.languageguide.org/): Great interactive depictions of basic vocabulary.
-- [Frequency Lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists): Study smart and begin with the most common vocabulary.
+- ⌛️ [Language Guide](https://www.languageguide.org/): Great interactive depictions of basic theme-based vocabulary.
+- ⌛️ [Frequency Lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists): Study smart and begin with the most common vocabulary.
 ## 🎓 Courses
 - [Duolingo](https://duolingo.com/): Doesn't really need explanation.
 - [LiveLingua](https://www.livelingua.com/project): Thousands of hours of content over more than 130 languages.
-- [Yojik](https://fsi-languages.yojik.eu/): A compilation of Foreign Service Institute (FSI), Defense Language Institute (DLI), & Peace-Corps courses (and then some!)
+- ⌛️ [Yojik](https://fsi-languages.yojik.eu/): A compilation of Foreign Service Institute (FSI), Defense Language Institute (DLI), & Peace-Corps courses (and then some!)
 - [CoffeeBreak Languages](https://coffeebreaklanguages.com/): Audio-based listen-and-repeat.
 - [Language Transfer](https://www.languagetransfer.org/): Audio-based listen-and-repeat.
 
@@ -55,48 +57,47 @@ Awesome *free* resources for learning languages. (WIP)
 
 # Language-specific
 
-Lists of language-specific resources. Most are maintained (or not maintained) in other resources.
+Lists of language-specific resources. Most are maintained (or not maintained) in other repositories.
 
 ## Europe
-- 🇬🇧 🇺🇸 [English](https://github.com/yvoronoy/awesome-english)
-- 🇪🇸 🇲🇽 🇨🇴 [Español (Spanish)](https://github.com/Areso/Awesome-for-Spanish-learners)
-- 🇫🇷 🇨🇦 [Français (French)](https://github.com/prise6/awesome-french)
-- 🇮🇹 Italiano (Italian)
-- 🇩🇪 [Deutsch (German)](https://github.com/willianpaixao/awesome-german)
-- 🇳🇱 [Nederlands (Dutch)](https://github.com/smirnov-am/awesome-dutch)
-- 🇧🇷 🇵🇹 🇲🇿 [Português (Portuguese)](https://github.com/anabastos/awesome-pesquisa)
-- 🇩🇰 [Dansk (Danish)](https://github.com/fnielsen/awesome-danish)
-- 🇸🇪 Svenska (Swedish)
-- 🇳🇴 Norsk (Norwegian)
-- 🇮🇸 íslenska (Icelandic)
-- 🇬🇷 🇨🇾 [Eλληνικά (Greek)](https://github.com/gbroques/awesome-greek)
-- 🇫🇮 [Suomi (Finnish)](https://github.com/sikmir/awesome-finnish)
-- 🇺🇦 украї́нська (Ukrainian)
-- 🇷🇺 [русский (Russian)](https://github.com/MitPitt/awesome-russian)
+- 🇬🇧 🇺🇸 [English](/languages/en)
+- 🇪🇸 🇲🇽 🇨🇴 [Español (Spanish)](/languages/es)
+- 🇫🇷 🇨🇦 [Français (French)](/languages/fr)
+- 🇮🇹 [Italiano (Italian)](/languages/it)
+- 🇩🇪 [Deutsch (German)](/languages/de)
+- 🇳🇱 [Nederlands (Dutch)](/languages/nl)
+- 🇧🇷 🇵🇹 🇲🇿 [Português (Portuguese)](/languages/pt)
+- 🇩🇰 [Dansk (Danish)](/languages/da)
+- 🇸🇪 [Svenska (Swedish)](/languages/sv)
+- 🇳🇴 [Norsk (Norwegian)](/languages/no)
+- 🇮🇸 [íslenska (Icelandic)](/languages/is)
+- 🇬🇷 🇨🇾 [Eλληνικά (Greek)](/languages/el)
+- 🇫🇮 [Suomi (Finnish)](/languages/fi)
+- 🇺🇦 [украї́нська (Ukrainian)](/languages/uk)
+- 🇷🇺 [русский (Russian)](/languages/ru)
 
 
 ## Middle East & Africa
 - 🇸🇦 [(Arabic) العربية](/languages/ar)
-- 🇮🇷 (Farsi)  فارسی
-- 🇹🇷 Türkçe
-- 🇮🇱 (Hebrew) עִבְרִית
-
+- 🇮🇷 [(Farsi)  فارسی](/languages/fa)
+- 🇹🇷 [Türkçe](/languages/tr)
+- 🇮🇱 [(Hebrew) עִבְרִית](/languages/he)
 
 ## Asia
-- 🇨🇳 官话 (Mandarin)
-- 🇭🇰 广东话 (Cantonese)
-- 🇰🇷 [한국어 (Korean)](https://github.com/mariabnd/awesome-korean)
-- 🇯🇵 [日本語 (Japanese)](https://github.com/yudataguy/Awesome-Japanese)
-- 🇮🇳 हिन्दी (Hindi)
-- 🇵🇰 [(Urdu) اُردُو](https://github.com/urduhack/awesome-urdu)
-- 🇮🇩 🇲🇾 Bahasa Indonesia / Bahasa Melayu Malaysia
-- 🇵🇭 Tagalog
-- 🇻🇳 Tiếng-việt (Vietnamese)
-- 🇹🇭 ภาษาไทย (Thai)
+- 🇨🇳 [官话 (Mandarin)](/languages/zh/cmn/)
+- 🇭🇰 [广东话 (Cantonese)](/languages/zh/yue/)
+- 🇰🇷 [한국어 (Korean)](/languages/ko)
+- 🇯🇵 [日本語 (Japanese)](/languages/ja)
+- 🇮🇳 [हिन्दी (Hindi)](/languages/hi)
+- 🇵🇰 [(Urdu) اُردُو](/languages/ur)
+- 🇮🇩 🇲🇾 [Bahasa Indonesia / Bahasa Melayu Malaysia](/languages/id)
+- 🇵🇭 [Tagalog](/languages/tl)
+- 🇻🇳 [Tiếng-việt (Vietnamese)](/languages/vi)
+- 🇹🇭 [ภาษาไทย (Thai)](/languages/th)
 
 ## Conlangs / Dead languages
-- 🦅 [Latīnum (Latin)](https://github.com/carolinaknoll/awesome-latin)
-- ☀️ [Toki pona](https://tokipona.org/)
+- 🦅 [Latīnum (Latin)](/languages/la)
+- ☀️ [Toki pona](/languages/tp)
 
 
 # FAQ 
