@@ -1,5 +1,5 @@
 # Language Learning [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re)
-Awesome *free* resources for learning languages.
+Awesome *free* resources for learning languages, from word lists, to images, pronunciations, and links.
 
 # General
 
@@ -12,7 +12,7 @@ Awesome *free* resources for learning languages.
 ## 📀 Resources
 - [All Language Resources](https://www.alllanguageresources.com/): Highly curated. Highly recommended. These guys are like consumer reports for language learning.
 - [r/languagelearning](https://www.reddit.com/r/languagelearning/wiki/index): Reddit's language-learning subreddit.
-- [cstrobbe](https://cstrobbe.gitlab.io/languagelearning/): A bit dated but still good.
+- [cstrobbe](https://cstrobbe.gitlab.io/languagelearning/)
 - [LearnALanguage.com](https://www.learnalanguage.com/): Reference for vocabulary, phrases, and courses.
 - [OpenCulture](https://www.openculture.com/freelanguagelessons): A portal to hundreds of other sites.
 - ⌛️ [Learn Any Language](https://learnanylanguage.fandom.com/wiki/Learn_Any_Language): A community wiki

@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+typer = "*"
+googletrans = "==3.1.0a0"
+black = "==19.10b0"
+wiktionaryparser = "*"
+bs4 = "*"
+plotext = {extras = ["image"], version = "*"}
+
+[dev-packages]
+pytest = "*"

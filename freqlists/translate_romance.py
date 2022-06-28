@@ -37,7 +37,7 @@ def main(src: Path, lang: str):
 
         fields = next(reader)
         safe_fields = [f.strip().replace(" ", "_").lower() for f in fields]
-        header = [lang, "en", *fields[1:]]
+        header = ["Word", "English", *fields[1:]]
 
         for _row in reader:
             row = [item.strip() for item in _row]
