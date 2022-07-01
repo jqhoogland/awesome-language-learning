@@ -8,6 +8,7 @@ requests = "*"
 typer = "*"
 tqdm = "*"
 googletrans = "==3.1.0a0"
+wiktionaryparser = "*"
 
 [dev-packages]
 pytest = "*"
