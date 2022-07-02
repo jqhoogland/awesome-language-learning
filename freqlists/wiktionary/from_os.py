@@ -263,11 +263,12 @@ def get_defs(word: Word, lang: Lang, rank: int) -> list[WiktionaryFetchResult]:
     # If the word is not in the definitions dict, fetch it from Wiktionary.
     # Then save it to the definitions dict.
     if word not in definitions:
-        defs = fetch_defs(word, lang)
-        definitions[word] = {
+        defs =  {
             "rank": rank,
-            "defs": defs
+            "defs": fetch_defs(word, lang)
         }
+        
+        definitions[word] = defs
 
         with open(f'../languages/{lang}/definitions.json', 'w') as f:
             print("Dumping definitions to save...", file=sys.stderr)
