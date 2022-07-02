@@ -91,8 +91,8 @@ LANGUAGES = {
 
 Word = str
 Lang = Literal['en', 'es', 'fr', 'de', 'it', 'pt', 'ja', 'ko', 'zh']
-RelationshipType = Literal['synonyms']
-PartOfSpeech = Literal['noun', 'verb', 'adjective', 'adverb', 'pronoun', 'conjunction', 'preposition', 'article', 'determiner']
+RelationshipType = Literal['synonyms', "related terms"]
+PartOfSpeech = Literal['noun', 'verb', 'adjective', 'adverb', 'pronoun', 'conjunction', 'preposition', 'article', 'determiner', 'numeral', 'interjection', 'interrogative', 'exclamation', 'question', 'particle']
 
 class WiktionaryRelatedWord(TypedDict):
     relationshipType: RelationshipType
@@ -139,29 +139,37 @@ class EnrichedWiktionaryFetchResult(TypedDict):
 
 project_dir = Path(os.path.dirname(__file__), "../..")
 
+
 def load_wfs(lang: Lang) -> list[tuple[str, int]]:
     with open(project_dir / f'languages/{lang}/frequencies_raw.csv', 'r') as f:
         return list(csv.reader(f))
+
 
 def load_all_defs(lang: Lang) -> dict[Word, WiktionaryFetchResult]:
     with open(project_dir / f'languages/{lang}/definitions.json', 'r') as f:
         return json.load(f)
 
+
 # Open Subtitles
+
 
 def get_words_path(lang: Lang) -> str:
     return f"https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/{lang}/{lang}_full.txt"
+
 
 def read_wf_line(line: str) -> tuple[str, int]: 
     """E.g.: 'word 123' -> `['word', 123]`"""
     [word, count] = line.split(" ")
     return word, int(count)
 
+
 def read_wfs(list: str) -> list[tuple[str, int]]:
     return [read_wf_line(line) for line in list.split("\n") if line]
 
+
 def fetch_wfs(lang: Lang) -> list[tuple[str, int]]:
     return read_wfs(requests.get(get_words_path(lang)).text)
+
 
 def save_wfs(lang: Lang, wfs) -> None:
     with open(project_dir / f'languages/{lang}/frequencies_raw.csv', 'w') as f:
@@ -175,6 +183,7 @@ def get_long_lang(lang: Lang) -> str:
 
 
 def fetch_defs(word: Word, lang: Lang) -> list[WiktionaryFetchResult]:
+    print(f"Fetching definitions for {word} from wiktionary...", file=sys.stderr)
     return parser.fetch(word, get_long_lang(lang))
 
 # CLI
@@ -204,7 +213,6 @@ def get_ipa(maybe_ipa: str) -> list[str] | None:
         detail = detail and detail.group(1) or ""
 
         ipas = re.findall(r"(?:\((.*?)\) )?\/(.*?)\/", raw_ipa)
-        print(ipas, file=sys.stderr)
         return [{"ipa": ipa, "kind": detail, "extra": extra} for (extra, ipa) in ipas if ipa]
 
 
@@ -214,7 +222,7 @@ def get_ipa(maybe_ipa: str) -> list[str] | None:
 
 def enrich_pronunciation(pronunciation: WiktionaryPronunciation) -> EnrichedWiktionaryPronunciation:
     ipa = []
-    non_ipa = []
+    text = []
 
     for maybe_ipa in pronunciation['text']:
         matches = get_ipa(maybe_ipa)
@@ -226,12 +234,14 @@ def enrich_pronunciation(pronunciation: WiktionaryPronunciation) -> EnrichedWikt
         elif maybe_ipa.startswith('Rhymes: '):
             pronunciation['rhymes'] = maybe_ipa[len('Rhymes: '):].split(' ')
         elif maybe_ipa.startswith('Homophone: '):
-            pronunciation['homophone'] = maybe_ipa[len('Homophone: '):].split(' ')
+            pronunciation['homophones'] = maybe_ipa[len('Homophone: '):].split(', ')
+        elif maybe_ipa.startswith('Homophones: '):
+            pronunciation['homophones'] = maybe_ipa[len('Homophones: '):].split(', ')
         else:
-            non_ipa.append(maybe_ipa)
+            text.append(maybe_ipa)
 
     pronunciation["ipa"] = ipa
-    pronunciation["non_ipa"] = non_ipa
+    pronunciation["text"] = text
 
     return pronunciation
 
@@ -247,11 +257,12 @@ def get_defs(word: Word, lang: Lang, rank: int) -> list[WiktionaryFetchResult]:
     # and a save exists.
     if not definitions and os.path.isfile(f'../languages/{lang}/definitions.json'):
         with open(f'../languages/{lang}/definitions.json', 'r') as f:
+            print("Loading definitions from save...", file=sys.stderr)
             definitions.update(json.load(f))
 
     # If the word is not in the definitions dict, fetch it from Wiktionary.
     # Then save it to the definitions dict.
-    if not word in definitions:
+    if word not in definitions:
         defs = fetch_defs(word, lang)
         definitions[word] = {
             "rank": rank,
@@ -259,6 +270,7 @@ def get_defs(word: Word, lang: Lang, rank: int) -> list[WiktionaryFetchResult]:
         }
 
         with open(f'../languages/{lang}/definitions.json', 'w') as f:
+            print("Dumping definitions to save...", file=sys.stderr)
             json.dump(definitions, f)
     
     # Otherwise load it from the definitions dict.
@@ -266,11 +278,11 @@ def get_defs(word: Word, lang: Lang, rank: int) -> list[WiktionaryFetchResult]:
         defs = definitions[word]
 
     # Enrich after loading the definition with extra information
-    return [enrich(result) for result in fetch_defs(word, lang)]
+    return [enrich(result) for result in defs['defs']]
 
 
 # typer doesn't accept literal values
-def main(lang: str, num: int = 3):
+def main(lang: str, num: int = typer.Option(default=3)):
     words = get_words(lang)[:num]
     
     defs = {}
@@ -279,7 +291,8 @@ def main(lang: str, num: int = 3):
         _defs = get_defs(word, lang, rank=i)
         defs[word] = _defs
 
-    print(json.dumps(defs))
+
+    print(json.dumps(defs, indent=2))
 
 if __name__ == "__main__":
     typer.run(main)
