@@ -60,44 +60,48 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 Lists of language-specific resources. Most are maintained (or not maintained) in other repositories.
 
 ## Europe
-- 🇬🇧 🇺🇸 [English](/languages/en)
-- 🇪🇸 🇲🇽 🇨🇴 [Español (Spanish)](/languages/es)
-- 🇫🇷 🇨🇦 [Français (French)](/languages/fr)
-- 🇮🇹 [Italiano (Italian)](/languages/it)
-- 🇩🇪 [Deutsch (German)](/languages/de)
-- 🇳🇱 [Nederlands (Dutch)](/languages/nl)
-- 🇧🇷 🇵🇹 🇲🇿 [Português (Portuguese)](/languages/pt)
-- 🇩🇰 [Dansk (Danish)](/languages/da)
-- 🇸🇪 [Svenska (Swedish)](/languages/sv)
-- 🇳🇴 [Norsk (Norwegian)](/languages/no)
-- 🇮🇸 [íslenska (Icelandic)](/languages/is)
-- 🇬🇷 🇨🇾 [Eλληνικά (Greek)](/languages/el)
-- 🇫🇮 [Suomi (Finnish)](/languages/fi)
-- 🇺🇦 [украї́нська (Ukrainian)](/languages/uk)
-- 🇷🇺 [русский (Russian)](/languages/ru)
-
+- [English](/languages/en) 🇺🇸 🇬🇧 🇦🇺 🇨🇦 🇮🇪 🇳🇿
+- [Español (Spanish)](/languages/es) 🇪🇸 🇲🇽 🇨🇴 
+- [Français (French)](/languages/fr) 🇫🇷 🇨🇦 
+- [Italiano (Italian)](/languages/it) 🇮🇹 
+- [Deutsch (German)](/languages/de) 🇩🇪 
+- [Nederlands (Dutch)](/languages/nl) 🇳🇱
+- [Português (Portuguese)](/languages/pt) 🇧🇷 🇵🇹 🇲🇿
+- [Dansk (Danish)](/languages/da) 🇩🇰
+- [Svenska (Swedish)](/languages/sv) 🇸🇪
+- [Norsk (Norwegian)](/languages/no) 🇳🇴
+- [íslenska (Icelandic)](/languages/is) 🇮🇸
+- [Eλληνικά (Greek)](/languages/el) 🇬🇷 🇨🇾
+- [Suomi (Finnish)](/languages/fi) 🇫🇮
+- [украї́нська (Ukrainian)](/languages/uk) 🇺🇦
+- [русский (Russian)](/languages/ru) 🇷🇺
+- [Polski (Polish)](/languages/pl) 🇵🇱
+- [Magyar nyelv (Hungarian)](/languages/hu) 🇭🇺
+- [Čeština (Czech)](/languages/cs) 🇨🇿
+- [Slovenčina (Slovak)](/languages/sk) 🇸🇰
+- [Românește (Romanian)](/languages/ro) 🇷🇴
 
 ## Middle East & Africa
-- 🇸🇦 [(Arabic) العربية](/languages/ar)
-- 🇮🇷 [(Farsi)  فارسی](/languages/fa)
-- 🇹🇷 [Türkçe](/languages/tr)
-- 🇮🇱 [(Hebrew) עִבְרִית](/languages/he)
+- [(Arabic) العربية](/languages/ar) 🇸🇦
+- [(Farsi)  فارسی](/languages/fa) 🇮🇷
+- [Türkçe](/languages/tr) 🇹🇷
+- [(Hebrew) עִבְרִית](/languages/he) 🇮🇱
 
 ## Asia
-- 🇨🇳 [官话 (Mandarin)](/languages/zh/cmn/)
-- 🇭🇰 [广东话 (Cantonese)](/languages/zh/yue/)
-- 🇰🇷 [한국어 (Korean)](/languages/ko)
-- 🇯🇵 [日本語 (Japanese)](/languages/ja)
-- 🇮🇳 [हिन्दी (Hindi)](/languages/hi)
-- 🇵🇰 [(Urdu) اُردُو](/languages/ur)
-- 🇮🇩 🇲🇾 [Bahasa Indonesia / Bahasa Melayu Malaysia](/languages/id)
-- 🇵🇭 [Tagalog](/languages/tl)
-- 🇻🇳 [Tiếng-việt (Vietnamese)](/languages/vi)
-- 🇹🇭 [ภาษาไทย (Thai)](/languages/th)
+- [官话 (Mandarin)](/languages/zh/cmn/) 🇨🇳
+- [广东话 (Cantonese)](/languages/zh/yue/) 🇭🇰
+- [한국어 (Korean)](/languages/ko) 🇰🇷
+- [日本語 (Japanese)](/languages/ja) 🇯🇵
+- [हिन्दी (Hindi)](/languages/hi) 🇮🇳
+- [(Urdu) اُردُو](/languages/ur) 🇵🇰
+- [Bahasa Indonesia / Bahasa Melayu Malaysia](/languages/id) 🇮🇩 🇲🇾
+- [Tagalog](/languages/tl) 🇵🇭
+- [Tiếng-việt (Vietnamese)](/languages/vi) 🇻🇳
+- [ภาษาไทย (Thai)](/languages/th) 🇹🇭
 
 ## Conlangs / Dead languages
-- 🦅 [Latīnum (Latin)](/languages/la)
-- ☀️ [Toki pona](/languages/tp)
+- [Latīnum (Latin)](/languages/la) 🦅
+- [Toki pona](/languages/tp) ☀️
 
 
 # FAQ 

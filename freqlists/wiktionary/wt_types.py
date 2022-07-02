@@ -11,7 +11,7 @@ Lang = Literal[
     'pt',
     'ja',
     'ko',
-    'zh',
+    # 'zh',
     'nl',
     'sv',
     'fi',
@@ -86,6 +86,12 @@ class WiktionaryPronunciation(TypedDict):
     text: list[str]
     audio: list
 
+class EnrichedWiktionaryPronunciation(TypedDict):
+    text: list[str]
+    audio: list
+    homophones: list[str]
+    hyphenation: list[str]
+
 class WiktionaryDefinition(TypedDict):
     partOfSpeech: PartOfSpeech
     text: list[str]
@@ -110,8 +116,6 @@ class EnrichedWiktionaryDefinition(TypedDict):
     pronunciations: list[str]
 
 
-class EnrichedWiktionaryPronunciation(TypedDict):
-    text: list[str]
 
 class EnrichedWiktionaryFetchResult(TypedDict):
     etymology: str
