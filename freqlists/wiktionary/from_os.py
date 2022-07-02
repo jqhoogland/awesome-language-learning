@@ -12,7 +12,6 @@ import json
 import os
 import re
 import sys
-from typing import Literal, TypedDict
 from pathlib import Path
 import csv
 import requests
@@ -23,116 +22,24 @@ from googletrans import Translator
 import typer
 import wiktionaryparser as wp
 
+from wiktionary.constants import LANGUAGES
+from wiktionary.wt_types import (
+    Word,
+    WiktionaryDefinition,
+    WiktionaryPronunciation,
+    WiktionaryFetchResult,
+    EnrichedWiktionaryDefinition,
+    EnrichedWiktionaryPronunciation,
+    EnrichedWiktionaryFetchResult,
+    Lang,
+)
+
 translator = Translator()
 parser = wp.WiktionaryParser()
-definitions = {}
 
-LANGUAGES = {
-    'en': 'english',
-    'es': 'spanish',
-    'fr': 'french',
-    'de': 'german',
-    'it': 'italian',
-    'pt': 'portuguese',
-    'ja': 'japanese',
-    'ko': 'korean',
-    'zh': 'chinese',
-    'nl': 'dutch',
-    'sv': 'swedish',
-    'fi': 'finnish',
-    'no': 'norwegian',
-    'da': 'danish',
-    'is': 'icelandic',
-    'pl': 'polish',
-    'hu': 'hungarian',
-    'cs': 'czech',
-    'ro': 'romanian',
-    'ru': 'russian',
-    'tr': 'turkish',
-    'hr': 'croatian',
-    'el': 'greek',
-    'he': 'hebrew',
-    'ar': 'arabic',
-    'hi': 'hindi',
-    'th': 'thai',
-    'uk': 'ukrainian',
-    'id': 'indonesian',
-    'fa': 'persian',
-    'bn': 'bengali',
-    'vi': 'vietnamese',
-    'sr': 'serbian',
-    'sk': 'slovak',
-    'sl': 'slovenian',
-    'eo': 'esperanto',
-    'tl': 'tagalog',
-    'ms': 'malay',
-    'km': 'khmer',
-    'lo': 'lao',
-    'bo': 'tibetan',
-    'my': 'myanmar',
-    'ka': 'georgian',
-    'ti': 'tigrinya',
-    'gu': 'gujarati',
-    'kn': 'kannada',
-    'ml': 'malayalam',
-    'or': 'oriya',
-    'pa': 'punjabi',
-    'as': 'assamese',
-    'mr': 'marathi',
-    'sa': 'sanskrit',
-    'ne': 'nepali',
-    'ta': 'tamil',
-    'te': 'telugu',
-    'si': 'sinhala',
-    'am': 'amhara',
-    'kmr': 'kurdish',
-    'az': 'azerbaijani',
-}
-
-Word = str
-Lang = Literal['en', 'es', 'fr', 'de', 'it', 'pt', 'ja', 'ko', 'zh']
-RelationshipType = Literal['synonyms', "related terms"]
-PartOfSpeech = Literal['noun', 'verb', 'adjective', 'adverb', 'pronoun', 'conjunction', 'preposition', 'article', 'determiner', 'numeral', 'interjection', 'interrogative', 'exclamation', 'question', 'particle']
-
-class WiktionaryRelatedWord(TypedDict):
-    relationshipType: RelationshipType
-    words: list[Word]
-
-class WiktionaryPronunciation(TypedDict):
-    text: list[str]
-    audio: list
-
-class WiktionaryDefinition(TypedDict):
-    partOfSpeech: PartOfSpeech
-    text: list[str]
-    relatedWords: list[WiktionaryRelatedWord]
-    examples: list[str]
-
-class WiktionaryFetchResult(TypedDict):    
-    etymology: str
-    definitions: list[WiktionaryDefinition]
-    pronunciation: list[WiktionaryPronunciation]
-
-
-class EnrichedWiktionaryDefinition(TypedDict):
-    partOfSpeech: PartOfSpeech
-
-    #: ['<word>', 'some derived form of <some-other-word>'+]
-    text: list[str]
-    relatedWords: list[WiktionaryRelatedWord]
-    examples: list[str]
-    lemmas: list[str]
-    translations: list[str]
-    pronunciations: list[str]
-
-
-class EnrichedWiktionaryPronunciation(TypedDict):
-    text: list[str]
-
-class EnrichedWiktionaryFetchResult(TypedDict):
-    etymology: str
-    definitions: list[EnrichedWiktionaryDefinition]
-    pronunciation: list[EnrichedWiktionaryPronunciation]
+# _updated tracks whether we have fetched new entries from wiktionary
+# (and therefore need to re-dump to json)
+definitions = {"_updated": False}
 
 
 # Local files
@@ -141,12 +48,12 @@ project_dir = Path(os.path.dirname(__file__), "../..")
 
 
 def load_wfs(lang: Lang) -> list[tuple[str, int]]:
-    with open(project_dir / f'languages/{lang}/frequencies_raw.csv', 'r') as f:
+    with open(project_dir / f"languages/{lang}/frequencies_raw.csv", "r") as f:
         return list(csv.reader(f))
 
 
 def load_all_defs(lang: Lang) -> dict[Word, WiktionaryFetchResult]:
-    with open(project_dir / f'languages/{lang}/definitions.json', 'r') as f:
+    with open(project_dir / f"languages/{lang}/definitions.json", "r") as f:
         return json.load(f)
 
 
@@ -157,8 +64,9 @@ def get_words_path(lang: Lang) -> str:
     return f"https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/{lang}/{lang}_full.txt"
 
 
-def read_wf_line(line: str) -> tuple[str, int]: 
+def read_wf_line(line: str) -> tuple[str, int]:
     """E.g.: 'word 123' -> `['word', 123]`"""
+
     [word, count] = line.rsplit(" ", maxsplit=1)
     return word, int(count)
 
@@ -172,30 +80,34 @@ def fetch_wfs(lang: Lang) -> list[tuple[str, int]]:
 
 
 def save_wfs(lang: Lang, wfs) -> None:
-    with open(project_dir / f'languages/{lang}/frequencies_raw.csv', 'w') as f:
+    with open(project_dir / f"languages/{lang}/frequencies_raw.csv", "w") as f:
         writer = csv.writer(f)
         writer.writerows(wfs)
 
+
 # Wiktionary
+
 
 def get_long_lang(lang: Lang) -> str:
     return LANGUAGES[lang]
 
 
 def fetch_defs(word: Word, lang: Lang) -> list[WiktionaryFetchResult]:
-    print(f"Fetching definitions for {word} from wiktionary...", file=sys.stderr)
+    print(f"Fetching definitions for '{word}' from wiktionary...", file=sys.stderr)
     return parser.fetch(word, get_long_lang(lang))
+
 
 # CLI
 def get_wfs(lang: Lang) -> list[tuple[str, int]]:
     """Try to load the words from the local file, otherwise fetch them from Open Subtitles."""
-    if os.path.isfile(project_dir / f'languages/{lang}/frequencies_raw.csv'):
+    if os.path.isfile(project_dir / f"languages/{lang}/frequencies_raw.csv"):
         wfs = load_wfs(lang)
     else:
         wfs = fetch_wfs(lang)
         save_wfs(lang, wfs)
-        
+
     return wfs
+
 
 def get_words(lang: Lang) -> list[str]:
     return [word[0] for word in get_wfs(lang)]
@@ -206,42 +118,42 @@ def enrich_def(def_: WiktionaryDefinition) -> EnrichedWiktionaryDefinition:
 
 
 def get_ipa(maybe_ipa: str) -> list[str] | None:
-    """ Regex match against `"IPA: /abc/"` """
+    """Regex match against `"IPA: /abc/"`"""
     if "IPA" in maybe_ipa:
-        try:
-            prefix, raw_ipa  = maybe_ipa.split("IPA: ")
-        except ValueError as e:
-            print(f"Error parsing IPA: {maybe_ipa}", file=sys.stderr)
-            prefix, raw_ipa  = maybe_ipa.split("IPA: ", maxsplit=1)
-        
+        prefix, raw_ipa = maybe_ipa.split("IPA: ", maxsplit=1)
+
         detail = re.search(r"\((.+)\)", prefix)
         detail = detail and detail.group(1) or ""
 
-        ipas = re.findall(r"(?:\((.*?)\) )?\/(.*?)\/", raw_ipa)
-        return [{"ipa": ipa, "kind": detail, "extra": extra} for (extra, ipa) in ipas if ipa]
+        ipas = re.findall(r"(?:\((.*?)\) )?(?:IPA: )?\/(.*?)\/", raw_ipa)
 
+        return [
+            {"ipa": ipa, "kind": detail, "extra": extra} for (extra, ipa) in ipas if ipa
+        ]
 
     return None
 
 
-
-def enrich_pronunciation(pronunciation: WiktionaryPronunciation) -> EnrichedWiktionaryPronunciation:
+def enrich_pronunciation(
+    pronunciation: WiktionaryPronunciation,
+) -> EnrichedWiktionaryPronunciation:
     ipa = []
     text = []
 
-    for maybe_ipa in pronunciation['text']:
+    for maybe_ipa in pronunciation["text"]:
         matches = get_ipa(maybe_ipa)
 
+        # TODO: Move this extra processing into a fork of wiktionaryparser
         if matches:
             ipa.extend(matches)
-        elif maybe_ipa.startswith('Hyphenation: '):
-            pronunciation['hyphenation'] = maybe_ipa[len('Hyphenation: '):]
-        elif maybe_ipa.startswith('Rhymes: '):
-            pronunciation['rhymes'] = maybe_ipa[len('Rhymes: '):].split(' ')
-        elif maybe_ipa.startswith('Homophone: '):
-            pronunciation['homophones'] = maybe_ipa[len('Homophone: '):].split(', ')
-        elif maybe_ipa.startswith('Homophones: '):
-            pronunciation['homophones'] = maybe_ipa[len('Homophones: '):].split(', ')
+        elif maybe_ipa.startswith("Hyphenation: "):
+            pronunciation["hyphenation"] = maybe_ipa[len("Hyphenation: ") :]
+        elif maybe_ipa.startswith("Rhymes: "):
+            pronunciation["rhymes"] = maybe_ipa[len("Rhymes: ") :].split(" ")
+        elif maybe_ipa.startswith("Homophone: "):
+            pronunciation["homophones"] = maybe_ipa[len("Homophone: ") :].split(", ")
+        elif maybe_ipa.startswith("Homophones: "):
+            pronunciation["homophones"] = maybe_ipa[len("Homophones: ") :].split(", ")
         else:
             text.append(maybe_ipa)
 
@@ -252,50 +164,58 @@ def enrich_pronunciation(pronunciation: WiktionaryPronunciation) -> EnrichedWikt
 
 
 def enrich(result: WiktionaryFetchResult) -> EnrichedWiktionaryFetchResult:
-    result['definitions'] = [enrich_def(def_) for def_ in result['definitions']]
-    result['pronunciations'] = enrich_pronunciation(result['pronunciations'])
+    result["definitions"] = [enrich_def(def_) for def_ in result["definitions"]]
+    result["pronunciations"] = enrich_pronunciation(result["pronunciations"])
     return result
 
-def get_defs(word: Word, lang: Lang, **kwargs) -> list[WiktionaryFetchResult]:
-    # Initialize the definitions dict above from a save if it hasn't been initialized
-    # and a save exists.
-    if not definitions and os.path.isfile(f'../languages/{lang}/definitions.json'):
-        with open(f'../languages/{lang}/definitions.json', 'r') as f:
-            print("Loading definitions from save...", file=sys.stderr)
-            definitions.update(json.load(f))
 
+def load_defs(word: Word, lang: Lang, **kwargs) -> None:
     # If the word is not in the definitions dict, fetch it from Wiktionary.
     # Then store it in the definitions dict.
     if word not in definitions:
-        definitions[word] = {
-            "defs": fetch_defs(word, lang),
-            **kwargs
-        }
-  
-    # Enrich after loading the definition with extra information
-    return [enrich(result) for result in definitions[word]['defs']]
+        definitions["_updated"] = True
+        definitions[word] = {"defs": fetch_defs(word, lang), **kwargs}
 
 
 def save_defs(lang: Lang) -> None:
-    with open(f'../languages/{lang}/definitions.json', 'w') as f:
+    if not definitions["_updated"]:
+        return
+
+    with open(f"../languages/{lang}/definitions.json", "w") as f:
         print("Dumping definitions to save...", file=sys.stderr)
+
+        definitions["_updated"] = False
         json.dump(definitions, f)
+
 
 # typer doesn't accept literal values
 def main(lang: str, num: int = typer.Option(default=3)):
     wfs = get_wfs(lang)[:num]
-    
-    defs = {}
+
+    enriched_defs = {}
+
+    # Initialize the definitions dict above from a save if a save exists.
+    if os.path.isfile(f"../languages/{lang}/definitions.json"):
+        with open(f"../languages/{lang}/definitions.json", "r") as f:
+            print("Loading definitions from save...", file=sys.stderr)
+            definitions.update(json.load(f))
+
+    print(definitions)
 
     for i, (word, count) in enumerate(tqdm(wfs, desc="Getting definitions...")):
-        _defs = get_defs(word, lang, rank=i, count=count)
-        defs[word] = _defs
+        load_defs(word, lang, rank=i, count=count)
+        enriched_defs[word] = [enrich(result) for result in definitions[word]["defs"]]
 
-        if i % 10 == 0:
+        # Save the definitions to a file every 10 words.
+        # (Fetching from wiktionary is slow, >1s per word.)
+        if i > 0 and i % 10 == 0:
             save_defs(lang)
 
+    save_defs(lang)
 
-    print(json.dumps(defs, indent=2))
+    # Use in combination with, e.g., jq as in `python from_os en | jq`
+    print(json.dumps(enriched_defs, indent=2))
+
 
 if __name__ == "__main__":
     typer.run(main)
