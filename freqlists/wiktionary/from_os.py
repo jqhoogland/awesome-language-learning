@@ -104,6 +104,7 @@ def fetch_defs(word: Word, lang: Lang) -> list[WiktionaryFetchResult]:
 
 # CLI
 
+
 def get_or_create_language_dir(lang: str) -> Path:
     dirpath = project_dir / f"languages/{lang}"
 
@@ -129,7 +130,20 @@ def get_words(lang: Lang) -> list[str]:
     return [word[0] for word in get_wfs(lang)]
 
 
-def enrich_def(def_: WiktionaryDefinition) -> EnrichedWiktionaryDefinition:
+def enrich_def(word: Word, def_: WiktionaryDefinition) -> EnrichedWiktionaryDefinition:
+    def_["source"] = word
+
+    if def_["text"]:
+        if def_["text"][0] == word and len(def_["text"]) > 1:
+            match = re.search(r"of (.+) (?:\(.+\))?\.?", def_["text"][1])
+            def_["source"] = match and match.group(0) or word
+            def_["text"] = def_["text"][1:]
+        elif def_["text"][0].startswith(word):
+            match = re.search("\((.+\))", def_["text"][0])
+            details = match and match.group(0) or ""
+            def_["source"] = re.findall(r".+? (\w+)[,\)(?: or )]", details)
+            # def_["text"] = def_["text"][1:]
+
     return def_
 
 
@@ -141,7 +155,7 @@ def get_ipa(maybe_ipa: str) -> list[str] | None:
         detail = re.search(r"\((.+)\)", prefix)
         detail = detail and detail.group(1) or ""
 
-        ipas = re.findall(r"(?:\((.*?)\) )?(?:IPA: )?([\/\[]].*?[\/\]])", raw_ipa)
+        ipas = re.findall(r"(?:\((.*?)\) )?(?:IPA: )?([\/\[].*?[\/\]])", raw_ipa)
 
         return [
             {"ipa": ipa, "kind": detail, "extra": extra} for (extra, ipa) in ipas if ipa
@@ -183,8 +197,9 @@ def enrich_pronunciation(
     return pronunciation
 
 
-def enrich(result: WiktionaryFetchResult) -> EnrichedWiktionaryFetchResult:
-    result["definitions"] = [enrich_def(def_) for def_ in result["definitions"]]
+def enrich(word: Word, result: WiktionaryFetchResult) -> EnrichedWiktionaryFetchResult:
+    del result["etymology"]
+    result["definitions"] = [enrich_def(word, def_) for def_ in result["definitions"]]
     result["pronunciations"] = enrich_pronunciation(result["pronunciations"])
     return result
 
@@ -220,7 +235,9 @@ def wfs_to_defs(lang: str, num: int, save_every: int = 100):
     pbar = tqdm(wfs, desc=f"    {lang}: Defining...")
     for i, (word, count) in enumerate(pbar):
         load_defs(word, lang, rank=i, count=count)
-        enriched_defs[word] = [enrich(result) for result in definitions[word]["defs"]]
+        enriched_defs[word] = [
+            enrich(word, result) for result in {**definitions[word]}["defs"]
+        ]
         pbar.set_description(f"    {lang}: Defining '{word}'...")
 
         # Save the definitions to a file every 10 words.

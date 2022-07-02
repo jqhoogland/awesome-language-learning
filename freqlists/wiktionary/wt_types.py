@@ -118,6 +118,5 @@ class EnrichedWiktionaryDefinition(TypedDict):
 
 
 class EnrichedWiktionaryFetchResult(TypedDict):
-    etymology: str
     definitions: list[EnrichedWiktionaryDefinition]
     pronunciation: list[EnrichedWiktionaryPronunciation]
