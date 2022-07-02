@@ -159,7 +159,7 @@ def get_words_path(lang: Lang) -> str:
 
 def read_wf_line(line: str) -> tuple[str, int]: 
     """E.g.: 'word 123' -> `['word', 123]`"""
-    [word, count] = line.split(" ")
+    [word, count] = line.rsplit(" ", maxsplit=1)
     return word, int(count)
 
 
@@ -187,17 +187,18 @@ def fetch_defs(word: Word, lang: Lang) -> list[WiktionaryFetchResult]:
     return parser.fetch(word, get_long_lang(lang))
 
 # CLI
-
-
-def get_words(lang: Lang) -> list[str]:
+def get_wfs(lang: Lang) -> list[tuple[str, int]]:
     """Try to load the words from the local file, otherwise fetch them from Open Subtitles."""
     if os.path.isfile(project_dir / f'languages/{lang}/frequencies_raw.csv'):
         wfs = load_wfs(lang)
     else:
         wfs = fetch_wfs(lang)
         save_wfs(lang, wfs)
+        
+    return wfs
 
-    return [word[0] for word in wfs]
+def get_words(lang: Lang) -> list[str]:
+    return [word[0] for word in get_wfs(lang)]
 
 
 def enrich_def(def_: WiktionaryDefinition) -> EnrichedWiktionaryDefinition:
@@ -207,7 +208,11 @@ def enrich_def(def_: WiktionaryDefinition) -> EnrichedWiktionaryDefinition:
 def get_ipa(maybe_ipa: str) -> list[str] | None:
     """ Regex match against `"IPA: /abc/"` """
     if "IPA" in maybe_ipa:
-        prefix, raw_ipa  = maybe_ipa.split("IPA: ")
+        try:
+            prefix, raw_ipa  = maybe_ipa.split("IPA: ")
+        except ValueError as e:
+            print(f"Error parsing IPA: {maybe_ipa}", file=sys.stderr)
+            prefix, raw_ipa  = maybe_ipa.split("IPA: ", maxsplit=1)
         
         detail = re.search(r"\((.+)\)", prefix)
         detail = detail and detail.group(1) or ""
@@ -251,8 +256,7 @@ def enrich(result: WiktionaryFetchResult) -> EnrichedWiktionaryFetchResult:
     result['pronunciations'] = enrich_pronunciation(result['pronunciations'])
     return result
 
-def get_defs(word: Word, lang: Lang, rank: int) -> list[WiktionaryFetchResult]:
-
+def get_defs(word: Word, lang: Lang, **kwargs) -> list[WiktionaryFetchResult]:
     # Initialize the definitions dict above from a save if it hasn't been initialized
     # and a save exists.
     if not definitions and os.path.isfile(f'../languages/{lang}/definitions.json'):
@@ -261,36 +265,34 @@ def get_defs(word: Word, lang: Lang, rank: int) -> list[WiktionaryFetchResult]:
             definitions.update(json.load(f))
 
     # If the word is not in the definitions dict, fetch it from Wiktionary.
-    # Then save it to the definitions dict.
+    # Then store it in the definitions dict.
     if word not in definitions:
-        defs =  {
-            "rank": rank,
-            "defs": fetch_defs(word, lang)
+        definitions[word] = {
+            "defs": fetch_defs(word, lang),
+            **kwargs
         }
-        
-        definitions[word] = defs
-
-        with open(f'../languages/{lang}/definitions.json', 'w') as f:
-            print("Dumping definitions to save...", file=sys.stderr)
-            json.dump(definitions, f)
-    
-    # Otherwise load it from the definitions dict.
-    else:
-        defs = definitions[word]
-
+  
     # Enrich after loading the definition with extra information
-    return [enrich(result) for result in defs['defs']]
+    return [enrich(result) for result in definitions[word]['defs']]
 
+
+def save_defs(lang: Lang) -> None:
+    with open(f'../languages/{lang}/definitions.json', 'w') as f:
+        print("Dumping definitions to save...", file=sys.stderr)
+        json.dump(definitions, f)
 
 # typer doesn't accept literal values
 def main(lang: str, num: int = typer.Option(default=3)):
-    words = get_words(lang)[:num]
+    wfs = get_wfs(lang)[:num]
     
     defs = {}
 
-    for i, word in enumerate(tqdm(words, desc="Getting definitions...")):
-        _defs = get_defs(word, lang, rank=i)
+    for i, (word, count) in enumerate(tqdm(wfs, desc="Getting definitions...")):
+        _defs = get_defs(word, lang, rank=i, count=count)
         defs[word] = _defs
+
+        if i % 10 == 0:
+            save_defs(lang)
 
 
     print(json.dumps(defs, indent=2))
