@@ -37,6 +37,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [Tatoeba](https://tatoeba.org/en/): Focuses on helping you find example sentences
 - [Forvo](https://forvo.com/): *the* pronunciation dictionary. (💰 API)
 - [Cooljugator](https://cooljugator.com/): for verb conjugations
+- [conjugio](https://conjugio.com/): also for verb conjugations
 
 ## 📥 Input
 - 💰 [Language Reactor](https://www.languagereactor.com): A browser extension to investigate subtitles on YouTube, Netflix, and more. 
@@ -49,6 +50,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [Anki](https://apps.ankiweb.net/): *the* flashcard app. (💰 mobile app)
 - 💰 [Memrise](https://www.memrise.com/)
 - 💰 [Quizlet](https://quizlet.com/)
+- [conjugio](https://conjugio.com/): practice verb conjugations
 
 ## 💱 Exchange
 
