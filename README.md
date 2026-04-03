@@ -121,3 +121,6 @@ This list is anything but exhaustive, so feel free to file a PR.
 
 ## But what if I want to pay for language-learning resources?
 Open an issue, and we can reconsider the "only free resources" stance.
+
+### Korean-specific
+- [Tubelang](https://tubelang.com) - YouTube subtitle-based Korean expression search. Hear how native speakers actually use expressions in context.
