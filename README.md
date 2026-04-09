@@ -27,6 +27,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - ⌛️ [Yojik](https://fsi-languages.yojik.eu/): A compilation of Foreign Service Institute (FSI), Defense Language Institute (DLI), & Peace-Corps courses (and then some!)
 - [CoffeeBreak Languages](https://coffeebreaklanguages.com/): Audio-based listen-and-repeat.
 - [Language Transfer](https://www.languagetransfer.org/): Audio-based listen-and-repeat.
+- [The Daily Lesson](https://thedailylesson.com/): One 5-minute editorial lesson per day in 47 languages. CC-BY-4.0. No streaks, no gamification. Published effect-size pilot at [/pilot](https://thedailylesson.com/pilot).
 
 ## 📚 Dictionaries
 - [Wiktionary](https://www.wiktionary.org/)
@@ -38,6 +39,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [Forvo](https://forvo.com/): *the* pronunciation dictionary. (💰 API)
 - [Cooljugator](https://cooljugator.com/): for verb conjugations
 - [conjugio](https://conjugio.com/): also for verb conjugations
+- [Word Orb](https://wordorb.ai/): Open multilingual dictionary API — 162K English headwords with IPA, etymology, and 601K cross-language translation pairs across 47 languages. CC-BY-4.0. Free tier with no signup for basic lookup.
 
 ## 📥 Input
 - 💰 [Language Reactor](https://www.languagereactor.com): A browser extension to investigate subtitles on YouTube, Netflix, and more. 
