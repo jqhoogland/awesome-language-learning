@@ -38,6 +38,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [Forvo](https://forvo.com/): *the* pronunciation dictionary. (💰 API)
 - [Cooljugator](https://cooljugator.com/): for verb conjugations
 - [conjugio](https://conjugio.com/): also for verb conjugations
+- 💰 [Eidetic](https://eidetic.cards): Anki-compatible flashcard decks for Arabic dialects, German, Spanish, and medical language with native speaker audio.
 
 ## 📥 Input
 - 💰 [Language Reactor](https://www.languagereactor.com): A browser extension to investigate subtitles on YouTube, Netflix, and more. 
@@ -51,6 +52,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - 💰 [Memrise](https://www.memrise.com/)
 - 💰 [Quizlet](https://quizlet.com/)
 - [conjugio](https://conjugio.com/): practice verb conjugations
+- 💰 [Eidetic](https://eidetic.cards): Anki-compatible flashcard decks for Arabic dialects, German, Spanish, and medical language with native speaker audio.
 
 ## 💱 Exchange
 

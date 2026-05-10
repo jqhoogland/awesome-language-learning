@@ -41,11 +41,14 @@ For general language-learning resources, see [parent](/).
 # By Dialect
 - 🕋 Modern Standard Arabic: [LiveLingua](https://www.livelingua.com/arabic/courses/modern-standard-arabic), [DLI](https://fsi-languages.yojik.eu/languages/DLI/DLI-Arabic-general.html)
 - 🇪🇬 Egyptian: [LiveLingua](https://www.livelingua.com/arabic/courses/egyptian), [DLI](https://fsi-languages.yojik.eu/languages/DLI/DLI-Arabic-Egyptian.html)
-- 🇸🇦 Saudi [DLI](https://fsi-languages.yojik.eu/languages/DLI/DLI-Arabic-Saudi.html)
+    - 💰 Flashcards: [Eidetic Egyptian Arabic](https://eidetic.cards/decks/egyptian-arabic): Anki deck with native Egyptian audio
+- 🇸🇦 Saudi: [DLI](https://fsi-languages.yojik.eu/languages/DLI/DLI-Arabic-Saudi.html)
     - Hijazi Dialect: [LiveLingua](https://www.livelingua.com/arabic/courses/hijazi-dialect)
+    - 💰 Flashcards: [Eidetic Saudi Arabic](https://eidetic.cards/decks/saudi-arabic): Anki deck with native Gulf Arabic audio
 - Levantine: [LiveLingua](https://www.livelingua.com/arabic/courses/levantine)
     - 🇸🇾 Syrian: [LiveLingua](https://www.livelingua.com/arabic/courses/syrian), [DLI](https://fsi-languages.yojik.eu/languages/DLI/DLI-Arabic-Syrian.html)
     - 🇯🇴 Jordanian: [LiveLingua](https://www.livelingua.com/arabic/courses/jordanian), [Peace Corps](https://fsi-languages.yojik.eu/languages/PeaceCorps/Arabic-Jordanian.html)
+    - 💰 Flashcards: [Eidetic Levantine Arabic](https://eidetic.cards/decks/levantine-arabic): Anki deck with native Levantine audio
 - 🇮🇶 Iraqi: [LiveLingua](https://www.livelingua.com/arabic/courses/iraqi), [DLI](https://fsi-languages.yojik.eu/languages/DLI/DLI-Arabic-Iraqi.html)
 - 🇹🇩 Chadian: [LiveLingua](https://www.livelingua.com/arabic/courses/chadian)
 - 🇲🇷 Mauritanian: [LiveLingua](https://www.livelingua.com/arabic/courses/mauritanian), [Peace Corps](https://fsi-languages.yojik.eu/languages/PeaceCorps/Arabic-Mauritanian.html)
