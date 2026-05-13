@@ -21,6 +21,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [Goethe-verlag](https://www.goethe-verlag.com/book2/EN/): Non-crowdsourced phrases
 - ⌛️ [Language Guide](https://www.languageguide.org/): Great interactive depictions of basic theme-based vocabulary.
 - ⌛️ [Frequency Lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists): Study smart and begin with the most common vocabulary.
+- [Pokelingo](https://pokelingo.io/): Daily Pokédex riddle in 9 languages. Read an entry in your target language, guess the Pokémon in five tries.
 ## 🎓 Courses
 - [Duolingo](https://duolingo.com/): Doesn't really need explanation.
 - [LiveLingua](https://www.livelingua.com/project): Thousands of hours of content over more than 130 languages.
