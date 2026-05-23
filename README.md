@@ -51,6 +51,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - 💰 [Memrise](https://www.memrise.com/)
 - 💰 [Quizlet](https://quizlet.com/)
 - [conjugio](https://conjugio.com/): practice verb conjugations
+- [KaChiKa](https://kachika.app/): AI photo-to-flashcard app — snap a photo to extract vocabulary in context, FSRS-scheduled reviews (iOS/Android)
 
 ## 💱 Exchange
 
