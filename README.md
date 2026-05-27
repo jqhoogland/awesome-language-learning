@@ -43,6 +43,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - 💰 [Language Reactor](https://www.languagereactor.com): A browser extension to investigate subtitles on YouTube, Netflix, and more. 
 - 💰 [ReadLang](https://readlang.com/): Similar to Language Reactor but geared more to written resources. With a built-in flashcard system.
 - [Language Input](https://www.languageinput.com/): A layer on top of Youtube with subtitles you can interrogate
+- 💰 [TubeVocab](https://www.tubevocab.com/): YouTube subtitles with click-to-translate; clicked words turn into AI flashcards with spaced repetition. Built for English learners, UI in 10 languages.
 - [Eja.tv](https://eja.tv/): Watch international TV channels from anywhere.
 
 ## 🗃 Flashcards
