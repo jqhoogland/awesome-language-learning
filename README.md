@@ -51,6 +51,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - 💰 [Memrise](https://www.memrise.com/)
 - 💰 [Quizlet](https://quizlet.com/)
 - [conjugio](https://conjugio.com/): practice verb conjugations
+- [LangStart](https://start-lang-liart.vercel.app/): short quizzes for must-know basics (alphabet, numbers, time, pronouns, and more) across several languages. ([source](https://github.com/seuthootDev/StartLang))
 
 ## 💱 Exchange
 
