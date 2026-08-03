@@ -56,6 +56,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 
 - [Tandem](https://www.tandem.net/)
 - [HelloTalk](https://www.hellotalk.com/?lang=en)
+- 💰 [OwnSlides](https://ownslides.com/): Blind-matched voice calls with other learners and scheduled audio rooms, alongside an AI tutor. Scores pronunciation word by word on accuracy, fluency and completeness. 91 languages.
 
 # Language-specific
 
