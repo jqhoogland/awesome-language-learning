@@ -49,6 +49,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 
 - [Anki](https://apps.ankiweb.net/): *the* flashcard app. (💰 mobile app)
 - 💰 [Memrise](https://www.memrise.com/)
+- 💰 [Recordar Palabras](https://recordarpalabras.com/): Save personal vocabulary and practise it with short spaced reviews on the web and iPhone.
 - 💰 [Quizlet](https://quizlet.com/)
 - [conjugio](https://conjugio.com/): practice verb conjugations
 
