@@ -42,6 +42,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 ## 📥 Input
 - 💰 [Language Reactor](https://www.languagereactor.com): A browser extension to investigate subtitles on YouTube, Netflix, and more. 
 - 💰 [ReadLang](https://readlang.com/): Similar to Language Reactor but geared more to written resources. With a built-in flashcard system.
+- [LingoBinge](https://lingobinge.com/): Free Chrome extension that replaces a small number of Netflix subtitle words with Indonesian and saves them for review.
 - [Language Input](https://www.languageinput.com/): A layer on top of Youtube with subtitles you can interrogate
 - [Eja.tv](https://eja.tv/): Watch international TV channels from anywhere.
 
