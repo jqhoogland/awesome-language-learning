@@ -100,6 +100,7 @@ Lists of language-specific resources. Most are maintained (or not maintained) in
 - [Tagalog](/languages/tl) 🇵🇭
 - [Tiếng-việt (Vietnamese)](/languages/vi) 🇻🇳
 - [ภาษาไทย (Thai)](/languages/th) 🇹🇭
+- [Кыргызча (Kyrgyz)](/languages/ky) 🇰🇬
 
 ## Conlangs / Dead languages
 - [Latīnum (Latin)](/languages/la) 🦅
