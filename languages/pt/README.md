@@ -1,6 +1,8 @@
-# Awesome Português (Portugese)
+# Awesome Português (Portuguese)
 
-See [Awesome Pesquisa](https://github.com/anabastos/awesome-pesquisa) & 
+See [Awesome Pesquisa](https://github.com/anabastos/awesome-pesquisa) &
 [All Language Resources](https://www.alllanguageresources.com/resources/portuguese).
 
-Please file a PR if you'd like to see this page not empty!
+## Courses
+
+- 💰 [Falando](https://falando.app/) - Brazilian Portuguese course with CEFR-aligned A1–C2 lessons, spaced repetition, pronunciation practice, and AI conversation. The complete A1 level is free.
