@@ -24,6 +24,7 @@ For general language-learning resources, see [parent](/).
 
 ## 📚 Dictionaries
 - [Wiktionary](https://ar.wiktionary.org/)
+- [3ammiya](https://3ammiya.com) — free community Egyptian Arabic dictionary with search, Franco-Arabic input, and real examples
 - [Wordreference](https://wordreference.com/enar)
 - [Bab.la](https://bab.la/)
 - [Reverso](https://www.reverso.net/text-translation)
