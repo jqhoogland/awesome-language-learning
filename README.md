@@ -44,7 +44,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - 💰 [ReadLang](https://readlang.com/): Similar to Language Reactor but geared more to written resources. With a built-in flashcard system.
 - [Language Input](https://www.languageinput.com/): A layer on top of Youtube with subtitles you can interrogate
 - [Eja.tv](https://eja.tv/): Watch international TV channels from anywhere.
-- [Leafy](https://leafyapp.uk): A Mac app that looks up any word on your screen and saves it with the sentence you found it in, so your word list keeps its context. Reaches text that browser extensions cannot: PDFs, subtitles, scans.
+- [LeafyApp](https://leafyapp.uk): A Mac app that looks up any word on your screen and saves it with the sentence you found it in, so your word list keeps its context. Reaches text that browser extensions cannot: PDFs, subtitles, scans.
 
 ## 🗃 Flashcards
 
