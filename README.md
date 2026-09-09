@@ -44,6 +44,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - 💰 [ReadLang](https://readlang.com/): Similar to Language Reactor but geared more to written resources. With a built-in flashcard system.
 - [Language Input](https://www.languageinput.com/): A layer on top of Youtube with subtitles you can interrogate
 - [Eja.tv](https://eja.tv/): Watch international TV channels from anywhere.
+- [LinguaMiner](https://github.com/thecopybookhare-cmd/lingua-miner): Watch video with word-by-word clickable subtitles; click a word to get an Anki card with the sentence audio, a clip and a translation. 12 languages, runs entirely on your machine, open source.
 
 ## 🗃 Flashcards
 
