@@ -48,6 +48,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 ## 🗃 Flashcards
 
 - [Anki](https://apps.ankiweb.net/): *the* flashcard app. (💰 mobile app)
+- 💰 [BrioVocab](https://briovocab.com/): French vocabulary practice with illustrated A1-B2 word sets and custom words, using spelling, pronunciation, and FSRS-6 scheduling personalized from review history.
 - 💰 [Memrise](https://www.memrise.com/)
 - 💰 [Quizlet](https://quizlet.com/)
 - [conjugio](https://conjugio.com/): practice verb conjugations
