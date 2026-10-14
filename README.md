@@ -42,6 +42,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 ## 📥 Input
 - 💰 [Language Reactor](https://www.languagereactor.com): A browser extension to investigate subtitles on YouTube, Netflix, and more. 
 - 💰 [ReadLang](https://readlang.com/): Similar to Language Reactor but geared more to written resources. With a built-in flashcard system.
+- 💰 [MeloLingua](https://melolingua.com/): Free graded stories (A1–B2) with audio and tap-to-translate in Spanish, French, German and Italian, plus Korean and Russian (A1–A2). Optional app adds speaking practice.
 - [Language Input](https://www.languageinput.com/): A layer on top of Youtube with subtitles you can interrogate
 - [Eja.tv](https://eja.tv/): Watch international TV channels from anywhere.
 
