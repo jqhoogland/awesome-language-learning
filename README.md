@@ -27,6 +27,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - ⌛️ [Yojik](https://fsi-languages.yojik.eu/): A compilation of Foreign Service Institute (FSI), Defense Language Institute (DLI), & Peace-Corps courses (and then some!)
 - [CoffeeBreak Languages](https://coffeebreaklanguages.com/): Audio-based listen-and-repeat.
 - [Language Transfer](https://www.languagetransfer.org/): Audio-based listen-and-repeat.
+- 💰 [PolyChat](https://www.polychatapp.com/): Full language courses from A1 to C2, with custom lessons and no daily limits on lessons for free users.
 
 ## 📚 Dictionaries
 - [Wiktionary](https://www.wiktionary.org/)
