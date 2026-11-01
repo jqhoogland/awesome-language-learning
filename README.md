@@ -27,6 +27,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - ⌛️ [Yojik](https://fsi-languages.yojik.eu/): A compilation of Foreign Service Institute (FSI), Defense Language Institute (DLI), & Peace-Corps courses (and then some!)
 - [CoffeeBreak Languages](https://coffeebreaklanguages.com/): Audio-based listen-and-repeat.
 - [Language Transfer](https://www.languagetransfer.org/): Audio-based listen-and-repeat.
+- [SziaMed](https://sziamed.com/try): Free Hungarian lessons for everyday and medical conversations, with listening and phrase practice. Uses synthetic voices.
 
 ## 📚 Dictionaries
 - [Wiktionary](https://www.wiktionary.org/)
