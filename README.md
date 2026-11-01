@@ -29,6 +29,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [Language Transfer](https://www.languagetransfer.org/): Audio-based listen-and-repeat.
 
 ## 📚 Dictionaries
+- [VocaFlare Clips](https://clips.vocaflare.com/playground): hear a word spoken in real YouTube clips, starting at the exact second (English, Spanish)
 - [Wiktionary](https://www.wiktionary.org/)
 - [Wordreference](https://wordreference.com/)
 - [Bab.la](https://bab.la/)
