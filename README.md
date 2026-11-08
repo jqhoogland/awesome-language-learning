@@ -50,6 +50,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [Anki](https://apps.ankiweb.net/): *the* flashcard app. (💰 mobile app)
 - 💰 [Memrise](https://www.memrise.com/)
 - 💰 [Quizlet](https://quizlet.com/)
+- 💰 [Vokabulo](https://www.vokabulo.com/): vocabulary app for 100+ languages, adds translations and example sentences, spaced repetition.
 - [conjugio](https://conjugio.com/): practice verb conjugations
 
 ## 💱 Exchange
