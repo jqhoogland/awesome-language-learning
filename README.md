@@ -42,7 +42,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 ## 📥 Input
 - 💰 [Language Reactor](https://www.languagereactor.com): A browser extension to investigate subtitles on YouTube, Netflix, and more. 
 - 💰 [ReadLang](https://readlang.com/): Similar to Language Reactor but geared more to written resources. With a built-in flashcard system.
-- 💰 [ReadLingua](https://readlingua.com/): iPhone, iPad and Mac app for reading graded books (A1 to C1) and any website: tap a word to see its translation right above it, then review saved words with flashcards.
+- 💰 [ReadLingua](https://readlingua.com/): iPhone, iPad and Mac app for reading graded books (A1 to C1) and any website: tap a word to see its translation right above it, then review saved words with flashcards. [App Store](https://apps.apple.com/app/id6755721145).
 - [Language Input](https://www.languageinput.com/): A layer on top of Youtube with subtitles you can interrogate
 - [Eja.tv](https://eja.tv/): Watch international TV channels from anywhere.
 
