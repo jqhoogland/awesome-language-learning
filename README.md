@@ -15,6 +15,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [cstrobbe](https://cstrobbe.gitlab.io/languagelearning/)
 - [LearnALanguage.com](https://www.learnalanguage.com/): Reference for vocabulary, phrases, and courses.
 - [OpenCulture](https://www.openculture.com/freelanguagelessons): A portal to hundreds of other sites.
+- [Language Tools Directory](https://languagetools.directory/): Curated directory of about 200 language learning tools (apps, courses, podcasts, dictionaries, tutors), filterable by 100+ languages, skill tags and pricing. Free to browse.
 - ⌛️ [Learn Any Language](https://learnanylanguage.fandom.com/wiki/Learn_Any_Language): A community wiki
 - ⌛️ [So you want to learn a language](https://sites.google.com/site/soyouwanttolearnalanguage/home): Lots of asian languages, but not maintained since 2014.
 - [Rhinospike](https://rhinospike.com/): Forvo's cousin for longer audio fragments.
