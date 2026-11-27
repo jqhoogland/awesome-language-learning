@@ -21,6 +21,7 @@ Awesome *free* resources for learning languages, from word lists, to images, pro
 - [Goethe-verlag](https://www.goethe-verlag.com/book2/EN/): Non-crowdsourced phrases
 - ⌛️ [Language Guide](https://www.languageguide.org/): Great interactive depictions of basic theme-based vocabulary.
 - ⌛️ [Frequency Lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists): Study smart and begin with the most common vocabulary.
+- [OpenExam Hub](https://openexamhub.org): Free study planner that turns official language-exam materials into a day-by-day plan, plus a CLB/NCLC converter.
 ## 🎓 Courses
 - [Duolingo](https://duolingo.com/): Doesn't really need explanation.
 - [LiveLingua](https://www.livelingua.com/project): Thousands of hours of content over more than 130 languages.
